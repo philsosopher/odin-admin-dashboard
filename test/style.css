@@ -1,0 +1,22 @@
+.container {
+    background-color: antiquewhite;
+    /* resize: both;
+    overflow: auto; */
+    padding:20px;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: minmax(1fr, 200px) 4fr; 
+}
+.sidebar {
+    /* max-width: 200px; */
+}
+
+.first {
+    background-color: rgb(170, 255, 227);
+}
+
+.second {
+    background-color: rgb(255, 159, 159);
+}

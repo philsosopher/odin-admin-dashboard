@@ -1,0 +1,37 @@
+@import url('reset.css');
+@import url('fonts.css');
+
+.container {
+    background-color: rgb(127, 127, 127);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 3fr 12fr 1fr;
+    grid-template-areas:
+    "sidebar head"
+    "sidebar main"
+    "sidebar footer";
+
+
+}
+
+
+aside {
+    background-color: rgb(168, 255, 182);
+    grid-area: sidebar;
+}
+
+.head {
+    background-color: rgb(212, 212, 255);
+    grid-area: head;
+}
+
+main {
+    background-color: antiquewhite;
+    grid-area: main;
+}
+
+footer {
+    background-color: #ffc5c5;
+    grid-area: footer;
+}
