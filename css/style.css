@@ -9,6 +9,10 @@ img.icon {
     filter: invert(99%) sepia(0%) saturate(5997%) hue-rotate(221deg) brightness(114%) contrast(76%);
 }
 
+img .icon:hover {
+    filter: invert(91%) sepia(11%) saturate(6664%) hue-rotate(334deg) brightness(104%) contrast(97%);
+}
+
 body {
     font-family: sans-serif;
 }
@@ -33,7 +37,7 @@ body {
     --sticky-note-yellow: #FFF59D;     /* Announcement card background, pale yellow for sticky notes */
 
     /* Teacher Lounge Buzz */
-    --whiteboard-white: #FFFFFF;       /* Trending card background, clean whiteboard white */
+    --whiteboard-white: #fff8f8;       /* Trending card background, clean whiteboard white */
 }
 
 /* ------------------ MISC */
@@ -274,10 +278,6 @@ main section {
     gap: 10px
 }
 
-.projects .content {
-    background-color: #FFF59D;
-}
-
 .announce .content {
     background-color: var(--whiteboard-white);
     padding: 30px;
@@ -326,6 +326,56 @@ main section {
 .trending .by {
     font-weight: bold;
 }
+
+
+/* PROJECTS */
+.projects .content {
+    /* --card-width: 450px; */
+    
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.projects .content .card {
+    background-color: var(--whiteboard-white);
+    padding: 20px;
+    border-radius: 8px;
+    height: 240px;
+    border-left: 7px solid var(--pencil-yellow);
+
+    display: grid;
+    align-content: space-between;
+
+}
+
+.projects .options {
+    justify-self: end;
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+}
+
+.projects h4 {
+    font-size: 1.25rem;
+}
+
+.projects .card p {
+    font-size: 1.1rem;
+}
+
+.projects .icon {
+    filter: none;
+    height: 30px;
+}
+
+.projects .icon:hover {
+    filter: invert(91%) sepia(11%) saturate(6664%) hue-rotate(334deg) brightness(104%) contrast(97%);
+}
+
+
+
+
 
 
 
