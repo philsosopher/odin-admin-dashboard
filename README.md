@@ -7,8 +7,13 @@
     4. Footer
 3. Detailed Layout for Sidebar
     header and list
+4. Head
+    Header
+    Nav
 
 
 
 - General Padding and margins
+- Color scheme adjustments
+- icon size adjustments
 
