@@ -39,7 +39,7 @@ body {
 /* ------------------ MISC */
 
 .container {
-    min-height: 100vh;
+    height: 100vh;
     display: grid;
     grid-template-columns: 250px 1fr;
     grid-template-rows: 3fr 12fr 1fr;
@@ -53,8 +53,9 @@ body {
 
 /* SIDEBAR */
 aside {
-    background-color: var(--chalkboard-black);
+    background-color: rgb(100, 25, 25);
     color: var(--chalk-white);
+    font-weight: bold;
     grid-area: sidebar;
     padding: 15px;
 
@@ -105,15 +106,12 @@ aside .title .icon {
 .head {
     grid-area: head;
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 0.8fr 1fr;
     z-index: 1;
     box-shadow: 0px 5px 5px -3px #C1C1C1;;
 }
 
-
 header {
-    padding: 10px;
-
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 100px;
@@ -121,7 +119,7 @@ header {
 
 header .search {
     /* background-color: aqua; */
-    padding: 8px;
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 40px 1fr;
     gap: 0px;
@@ -132,7 +130,7 @@ header .search {
 header input {
     outline: 2px solid rgb(202, 202, 202);
     border: 0px;
-    height: 40px;
+    height: 33px;
     border-radius: 25px;
     padding: 5px 20px;
     background-color: var(--notebook-paper-white);
@@ -156,7 +154,7 @@ header .user {
 }
 
 header .user .dp {
-    --dp-size: 50px;
+    --dp-size: 45px;
     height: var(--dp-size);
     width: var(--dp-size);
     /* border: 1px solid rgb(176, 176, 176); */
@@ -203,7 +201,7 @@ nav .user .welcome {
 }
 
 nav .user .dp {
-    --dp-size: 80px;
+    --dp-size: 70px;
     height: var(--dp-size);
     width: var(--dp-size);
     /* border: 1px solid rgb(176, 176, 176); */
@@ -244,9 +242,94 @@ nav button:hover {
 /* Main Content */
 
 main {
-    background-color: antiquewhite;
+    background-color: rgb(235, 217, 210);
     grid-area: main;
+    padding: 30px;
+    
+    display: grid;
+    grid-template-columns: 2.5fr 1fr;
+    grid-template-areas: 
+    "projects announce"
+    "projects trending";
+    gap: 20px;
+    align-content: start;
 }
+
+.projects {
+    grid-area: projects;
+}
+
+.announce {
+    grid-area: announce;
+}
+
+.trending {
+    grid-area: trending;
+}
+
+main section {
+    display: grid;
+    grid-template-rows:  auto auto;
+    align-content: start;
+    gap: 10px
+}
+
+.projects .content {
+    background-color: #FFF59D;
+}
+
+.announce .content {
+    background-color: var(--whiteboard-white);
+    padding: 30px;
+    border-radius: 8px;
+
+    display: grid;
+    align-content: start;
+}
+
+.announce .content > .item {
+    border-bottom: 1px solid rgb(142, 142, 142); /* Your horizontal line */
+    padding: 15px 5px;
+  }
+  
+.announce .content > .item:last-child {
+    border-bottom: none; /* Remove line after the last row */
+}
+
+.trending .content {
+    background-color: var(--whiteboard-white);
+    border-radius: 8px;
+    padding: 20px 30px;
+
+    display: grid;
+}
+
+.trending .item {
+    padding: 10px 0;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: start;
+    gap: 35px;
+}
+
+
+.trending .dp {
+    --dp-size: 55px;
+    height: var(--dp-size);
+    width: var(--dp-size);
+    /* border: 1px solid rgb(176, 176, 176); */
+    border-radius: calc(var(--dp-size) / 2);
+    overflow: hidden;
+    margin-right: -20px;
+}
+
+.trending .by {
+    font-weight: bold;
+}
+
+
+
+/* Footer */
 
 footer {
     background-color: #ffc5c5;
