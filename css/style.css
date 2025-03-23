@@ -1,11 +1,48 @@
 @import url('reset.css');
 @import url('fonts.css');
 
+/* ------------------ MISC */
+
+img.icon {
+    height: 40px;
+    /* filter: brightness(0) invert(1); */
+    filter: invert(99%) sepia(0%) saturate(5997%) hue-rotate(221deg) brightness(114%) contrast(76%);
+}
+
+body {
+    font-family: sans-serif;
+}
+
+:root {
+    /* General Colors */
+    --chalkboard-black: #1A2526;       /* Sidebar background, deep black like a chalkboard */
+    --notebook-paper-white: #F5F5F5;   /* Main content background, soft off-white */
+    --apple-red: #D32F2F;              /* Headings, buttons, accents - teacher's apple red */
+    --pencil-yellow: #FBC02D;          /* Highlights, borders, hover effects - pencil yellow */
+    --folder-blue: #1976D2;            /* Buttons, links, secondary accents - school folder blue */
+    --charcoal-gray: #333333;          /* Body text for readability */
+
+    /* Sidebar (Staff Room) */
+    --chalk-white: #E0E0E0;            /* Sidebar text, mimicking chalk writing */
+
+    /* Classroom Projects */
+    --index-card-cream: #FFF8E1;       /* Project card background, warm cream for index cards */
+
+    /* School Bulletin Board */
+    --corkboard-brown: #D7B28A;        /* Bulletin board background, warm corkboard brown */
+    --sticky-note-yellow: #FFF59D;     /* Announcement card background, pale yellow for sticky notes */
+
+    /* Teacher Lounge Buzz */
+    --whiteboard-white: #FFFFFF;       /* Trending card background, clean whiteboard white */
+}
+
+/* ------------------ MISC */
+
 .container {
     background-color: rgb(127, 127, 127);
     min-height: 100vh;
     display: grid;
-    grid-template-columns: 200px 1fr;
+    grid-template-columns: 250px 1fr;
     grid-template-rows: 3fr 12fr 1fr;
     grid-template-areas:
     "sidebar head"
@@ -15,15 +52,123 @@
 
 }
 
-
+/* SIDEBAR */
 aside {
-    background-color: rgb(168, 255, 182);
+    background-color: var(--chalkboard-black);
+    color: var(--chalk-white);
     grid-area: sidebar;
+    padding: 15px;
+
+    display: grid;
+    align-content: start;
+    gap: 40px;
 }
+
+aside section {
+    display: grid;
+    gap: 10px;
+}
+
+aside section.title .item {
+    font-size: 1.5rem;
+    height: 70px;
+    grid-template-columns: 70px 1fr;
+    
+}
+
+aside .item {
+    height: 35px;
+    padding: 2px;
+
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    align-items: center;
+    gap: 5px
+}
+
+aside .item:hover {
+    color: var(--pencil-yellow);
+}
+
+aside .icon {
+    height: 25px;
+}
+
+aside .title .icon {
+    height: 100%;
+}
+
+
+/* HEAD */
 
 .head {
     background-color: rgb(212, 212, 255);
     grid-area: head;
+}
+
+header * {
+    /* outline: 1px solid green; */
+}
+
+
+header {
+    padding: 10px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 100px;
+}
+
+header .search {
+    /* background-color: aqua; */
+    padding: 8px;
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 0px;
+    align-items: center;
+    /* justify-items: start; */
+}
+
+header input {
+    outline: none;
+    border-width: 0px;
+    height: 40px;
+    border-radius: 25px;
+    padding: 5px 20px;
+    background-color: var(--notebook-paper-white);
+
+}
+
+header .user {
+    /* background-color: #ffc5c5; */
+    padding: 8px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+header .user .dp {
+    --dp-size: 60px;
+    height: var(--dp-size);
+    width: var(--dp-size);
+    border: 1px solid black;
+    border-radius: calc(var(--dp-size) / 2);
+    overflow: hidden;
+}
+
+header .user .name {
+    font-weight: bold;
+}
+
+header .icon {
+    filter: none;
+    height: 30px;
+}
+
+.dp img {
+    height: 100%;
 }
 
 main {
